@@ -1,65 +1,86 @@
-import Image from "next/image";
+'use client';
+
+import { Mail, Download } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col justify-center min-h-screen max-w-7xl mx-auto">
+          {/* Heading */}
+          <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 text-center">
+            Hi, I'm{' '}
+            <span className="text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]">
+              Darryl Surjadi
+            </span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+
+          {/* Subtitle */}
+          <div className="mb-12">
+            <p className="text-3xl md:text-5xl font-bold text-center">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Software Developer
+              </span>
+              <span className="text-gray-300 mx-3">&</span>
+              <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+                Production Engineer
+              </span>
+            </p>
+            {/* Glowing underline */}
+            <div className="h-0.5 w-24 bg-gradient-to-r from-cyan-400 to-purple-500 mt-3 rounded-full mx-auto"></div>
+          </div>
+
+          {/* Buttons Container */}
+          <div className="flex gap-4 justify-center flex-wrap items-center">
+            {/* GitHub Icon Button */}
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="https://github.com/DarrylSurjadi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative p-4 border-2 border-gray-600 text-gray-300 rounded-xl hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/10 hover:scale-110 transition-all duration-300 group"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              <FaGithub className="w-6 h-6" />
+              <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                GitHub
+              </span>
+            </a>
+
+            {/* LinkedIn Icon Button */}
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="https://linkedin.com/in/darryl-surjadi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative p-4 border-2 border-gray-600 text-gray-300 rounded-xl hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/10 hover:scale-110 transition-all duration-300 group"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              <FaLinkedin className="w-6 h-6" />
+              <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                LinkedIn
+              </span>
+            </a>
+
+            {/* Mail Icon Button */}
+            <a
+              href="mailto:darryledwardsurjadi@gmail.com"
+              className="relative p-4 border-2 border-gray-600 text-gray-300 rounded-xl hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/10 hover:scale-110 transition-all duration-300 group"
+            >
+              <Mail className="w-6 h-6" />
+              <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Email
+              </span>
+            </a>
+
+            {/* Download Resume Button */}
+            <a
+              href="/resume.pdf"
+              className="relative px-8 py-4 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 text-white rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/50 flex items-center gap-2 group overflow-hidden"
+            >
+              <Download className="w-5 h-5 relative z-10" />
+              <span className="relative z-10 font-semibold">Download Resume</span>
+            </a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
