@@ -5,9 +5,6 @@ import {
   Smartphone, 
   Cloud, 
   Shield,
-  Database,
-  GitBranch,
-  Terminal,
   Bug
 } from 'lucide-react';
 
@@ -45,7 +42,7 @@ const Skills = () => {
     },
     {
       title: "Testing & Quality",
-      icon: "🧪",
+      icon: Bug,
       skills: ["Playwright", "JUnit", "Mockito", "Cucumber", "Test Automation"],
     },
   ];
